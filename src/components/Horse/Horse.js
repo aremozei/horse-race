@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import HorseComponent from '../HOCs/withHorse'
 
 function Horse(props) {
-    const { playerId, score, chairColor } = this.props;
-    
+    const { name } = props.props;
+    console.log(props)
+
     return (
         <div>
-            Hola {playerId} color {chairColor}
+            Hola {name}
         </div>        
     )
 }

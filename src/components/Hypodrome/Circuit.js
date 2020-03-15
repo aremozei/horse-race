@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import Horse from '../Horse/Horse';
+// import Horse from '../Horse/Horse';
+import RaceTrack from '../Tracks/HorseTrack';
 
 function Circuit() {
     let pokemons = []; //Players for the moment
@@ -37,17 +38,24 @@ function Circuit() {
 
     return (
         <>
-            {displayLoadingSpinner ? 
-            <>
-                <h1>Loading</h1>
-            </>
-            : 
+            <div id="earth">
+                {displayLoadingSpinner ? 
                 <>
-                    {items.map((pokemon, index) => (
-                        <Horse key={index} props={pokemon} />  
-                    ))}
+                    <h1>Loading</h1>
                 </>
-            }
+                : 
+                    <>
+                        <div className="sky">
+
+                        </div>
+                        <div className="dirt">
+                            {items.map((pokemon, index) => (
+                                <RaceTrack itemQuantity={pokemons.length} key={index} props={pokemon} />  
+                            ))}
+                        </div>
+                    </>
+                }
+            </div>
         </>
         
     )

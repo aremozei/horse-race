@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+//This Hocs needs to be changed to handle the funcitonality of getting the players score for the score tab and the horse
 const HorseComponent = OriginalHorse => {
     class NewHorse extends React.Component {
         constructor(props) {

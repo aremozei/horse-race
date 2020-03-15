@@ -23,12 +23,4 @@ const Home = () => (
   </div>
 )
 
-// const GetPlayers = () => {
-//   return [
-//     //Https calls here
-//     {call:'station one',frequency:'000'},
-//     {call:'station two',frequency:'001'}
-//   ]
-// }
-
 export default App;

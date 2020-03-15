@@ -1,0 +1,27 @@
+html, body, #root, .App, #earth {
+    height: 100%;
+    width: 100%;
+}
+
+#earth .sky {
+    height: 30%;
+    width: 100%;
+}
+
+#earth .dirt {
+    height: 70%;
+    width: 100%;
+    display: inline-grid;
+}
+
+#earth hr {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    color: brown;
+}
+
+#earth .race-track {
+    /* height: auto; */
+    width: 100%;
+}

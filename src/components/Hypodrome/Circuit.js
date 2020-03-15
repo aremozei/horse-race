@@ -3,14 +3,16 @@ import Horse from '../Horse/Horse';
 
 function Circuit() {
     let pokemons = []; //Players for the moment
+    let displayLoading = true;
+    const [items, setPlayers] = useState([]);
+    const [displayLoadingSpinner, setLoading] = useState([true]);
 
     useEffect(() => {
-        fetchPlayers();
-        // makeHorses();
+        fetchPlayers(); 
     },[]);
-    //Brackets means it will only run when it mounts
 
-    const [items, setPlayers] = useState([]);
+    useEffect(() => {
+    },[displayLoading])
 
     const fetchPlayers = async () => {
         for (let i = 0;  i <= randomPlayersNumber(1,12); i++) {
@@ -20,6 +22,7 @@ function Circuit() {
         }
         console.log(pokemons)
         setPlayers(pokemons)
+        setLoading(false)
     }
 
     const randomPlayersNumber = (min, max) => {
@@ -33,54 +36,21 @@ function Circuit() {
     }
 
     return (
-        // <>Holi</>
         <>
-            {items.map(pokemon => (
-              <Horse props={pokemon} />  
-            ))}
+            {displayLoadingSpinner ? 
+            <>
+                <h1>Loading</h1>
+            </>
+            : 
+                <>
+                    {items.map((pokemon, index) => (
+                        <Horse key={index} props={pokemon} />  
+                    ))}
+                </>
+            }
         </>
-        // <>
-        //     {pokemons &&
-        //         <>
-        //             {pokemons.map(pokemon => (
-        //                 <Horse props={pokemon} />
-        //             ))}
-        //         </>
-        //     }
-        // </>
+        
     )
 }
 
 export default Circuit;
-
-
-// import React, { Component } from 'react'
-// // import Horse from '../Horse/Horse'
-//OLD
-// class Circuit extends Component {
-
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             players: [
-//                 {call:'station one',frequency:'000'},
-//                 {call:'station two',frequency:'001'}
-//             ],
-//             raceId: ""
-//         }
-//     }
-
-//     render() {
-//         const { players } = this.state
-        
-//         return (
-//             <>
-//                 {players.map(player => 
-//                        <div> Hello {player.call} from {player.frequency} </div>
-//                 )}
-//             </>
-//         )
-//     }
-// }
-
-// export default Circuit

@@ -49,6 +49,7 @@ function Circuit() {
 
                         </div>
                         <div className="dirt">
+                            {/* <RaceTrack itemQuantity={pokemons.length} props={pokemons[1]} /> */}
                             {items.map((pokemon, index) => (
                                 <RaceTrack itemQuantity={pokemons.length} key={index} props={pokemon} />  
                             ))}

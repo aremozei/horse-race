@@ -7,7 +7,7 @@ function HorseTrack(player) {
 
     return (
         <div className="race-track">
-            <hr></hr>
+            {/* <hr></hr> */}
             <Horse data={playerData} />
         </div>
     )
